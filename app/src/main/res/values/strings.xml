@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Prison_App</string>
+    <string name="alert_dialog_desc">Alert dialog</string>
+    <string name="increase_button_desc">Increase value by %1$d</string>
+    <string name="decrease_button_desc">Lower value by %1$d</string>
+    <string name="add_prison_desc">Add prison</string>
+    <string name="add_prisoner_desc">Add prisoner</string>
+    <string name="add_inquisitor_desc">Add inquisitor</string>
+    <string name="observe_inquisitors_txt">Observe inquisitors</string>
+
+    <string name="prisons_screen_header">Prisons</string>
+    <string name="inquisitors_screen_header">Inquisitors</string>
+    <string name="prisoners_screen_header">Prisoners</string>
+    <string name="inquisitor_account_type">Inquisitor</string>
+    <string name="prisoner_account_type">Prisoner</string>
+    <string name="captain_account_type">Captain</string>
+
+    <string name="login_screen_header">Authorize</string>
+    <string name="save_changes_btn">Save changes</string>
+    <string name="personal_info_screen_header">Prisoner Info</string>
+    <string name="prison_info_screen_header">Prison Info</string>
+    <string name="inquisitor_info_screen_header">Inquisitor Info</string>
+    <string name="login_input_header">Login:</string>
+    <string name="password_input_header">Password:</string>
+    <string name="authorise_button_text">Authorise</string>
+    <string name="prison_image_desc">Prison image</string>
+    <string name="options_menu_ic">Prison options menu</string>
+    <string name="home_screen_desc">Home screen</string>
+    <string name="delete_prison_button">Delete prison</string>
+    <string name="update_prison_button">Update prison</string>
+    <string name="prisoner_image_desc">Prisoner portrait</string>
+    <string name="inquisitor_image_desc">Inquisitor portrait</string>
+    <string name="prisoner_dangerous_desc">Dangerous prisoner</string>
+    <string name="not_married">! Not married !</string>
+    <string name="inquisitor_deleting_title">!! Caution !!</string>
+    <string name="inquisitor_deleting_text">Are you really sre you want to fire this employee</string>
+
+    <string name="prison_address_string">Address</string>
+    <string name="prisoner_personal_info_field">Personal information</string>
+    <string name="guilty_for_field">Guilty for: %1$s</string>
+    <string name="prisoner_name_field">Name: %1$s</string>
+    <string name="prisoner_initials_text">%1$s %2$s. %3$s.</string>
+    <string name="prisoner_surname_field">Surname: %1$s</string>
+    <string name="prisoner_patronymic_field">Patronymic: %1$s</string>
+    <string name="prisoner_imprisonment_period_field">Imprisoned period: %1$d</string>
+    <string name="prisoner_imprisonment_period_input">Period:</string>
+    <string name="prisoner_crime_field">Imprisoned for: %1$s</string>
+    <string name="prisoner_age_field">Age: %1$d</string>
+    <string name="prisoner_age_input">Age:</string>
+    <string name="prisoner_power_field">Power: %1$d lvl</string>
+    <string name="prisoner_power_input">Power: </string>
+    <string name="prisoner_restore_health_field">Restore health</string>
+    <string name="prisoner_power_up_filed">Power Up</string>
+    <string name="prisoner_health_field">Health: %1$d hp</string>
+    <string name="prisoner_health_input">Health: </string>
+</resources>

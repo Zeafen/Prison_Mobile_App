@@ -23,9 +23,8 @@ import kotlin.random.Random
 class PrisonerScreenViewModel @Inject constructor (
     val prisonDAO : PrisonDAO
 ): ViewModel() {
-
-
-
+    private val _authorizesPrisoner = MutableStateFlow<Prisoner?>(null)
+    private val _selectedPrisoner = MutableStateFlow<Prisoner?>(null)
     private val _prisonID = MutableStateFlow(UUID.randomUUID())
     private var _prisoners: StateFlow<List<Prisoner>> = _prisonID.flatMapLatest {prisonID ->
         prisonDAO.getHereticsInPrison(prisonID)
@@ -55,22 +54,27 @@ class PrisonerScreenViewModel @Inject constructor (
                 it.copy(isEditingPrisoner = true)
             }
             PrisonerEvent.OpenHealDialog -> _state.update {
-                it.copy(isHealing = true)
+                it.copy(isEditingPrisoner = false,
+                    isHealing = true,
+                    isPoweringUp = false)
             }
             PrisonerEvent.OpenPowerUpDialog -> _state.update {
-                it.copy(isPoweringUp = true)
+                it.copy(isEditingPrisoner = false,
+                    isHealing = false,
+                    isPoweringUp = true)
             }
             PrisonerEvent.GoToDiningRoom -> {
                 _state.update {
-                    it.copy(isHealing = true)
+                    it.copy(isEditingPrisoner = false,
+                        isHealing = true,
+                        isPoweringUp = false)
                 }
                 viewModelScope.launch {
                     val prisoner = state.value.authorisedPrisoner.copy(
-                        health = if(state.value.authorisedPrisoner.health <= 225) state.value.authorisedPrisoner.health + 25
+                        health = if(state.value.authorisedPrisoner.health <= 200) state.value.authorisedPrisoner.health + 25
                         else 225
                     )
                     prisonDAO.upsertPrisoner(prisoner)
-
                     delay(10000)
                     _state.update {
                         it.copy(
@@ -81,7 +85,9 @@ class PrisonerScreenViewModel @Inject constructor (
             }
             PrisonerEvent.GoToGym ->viewModelScope.launch {
                 _state.update {
-                    it.copy(isPoweringUp = true)
+                    it.copy(isEditingPrisoner = false,
+                        isHealing = false,
+                        isPoweringUp = true)
                 }
                 val prisoner = state.value.authorisedPrisoner.copy(
                     power = if (state.value.authorisedPrisoner.power < 5) state.value.authorisedPrisoner.power + 1
